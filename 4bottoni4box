@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="4bottoniColore" content="4 box con 4 bottoni al interno">
+        <title>4box4bottoni</title>
+
+        <style>
+
+            .box1 
+            {
+                height:200px;
+                width:200px;
+                border: 3px outset white;
+                background-color: 	rgb(219, 210, 84);
+                margin:1px;
+                padding:20px;
+                float: left;
+            }
+
+            .box2 
+            {
+                height:200px;
+                width:200px;
+                border: 3px outset white;
+                background-color:	rgb(231, 80, 80);
+                margin:1px;
+                padding:20px;
+                float: left;
+            }
+
+            .box3 
+            {
+                height:200px;
+                width:200px;
+                border: 3px outset white;
+                background-color: 	rgb(148, 236, 126);
+                margin:1px;
+                padding:20px;
+                float: left;
+            }
+
+            .box4 
+            {
+                height:200px;
+                width:200px;
+                border: 3px outset white;
+                background-color: 	rgb(47, 28, 209);
+                margin:1px;
+                padding:20px;
+                float: left;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+ 
+        <div class="box1">
+            <button>bottone</button>
+        </div>
+
+        <div class="box2">
+            <button>bottone</button>
+        </div>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+        <div class="box3"> 
+            <button>bottone</button>
+        </div>
+ 
+        <div class="box4"> 
+            <button>bottone</button>
+        </div>
+
+    </body>
+
+</html>
