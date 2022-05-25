@@ -1,0 +1,54 @@
+<script Language='JavaScript'>
+
+   function inizia()
+   {
+      var b=document.getElementById('B');
+      let i=10;
+       
+      setInterval(function ()  {
+         y=parseInt(b.offsetLeft);
+         x=parseInt(b.offsetTop); 
+          
+            y=y+i;
+            x=x+i;
+            b.style.left=y;
+            b.style.top=x;
+            i=i+10;        
+         }, 100);        
+      }
+    
+</script>  
+    
+<html lang="it-IT">
+   <head>
+
+      <title>Diagonale</title>
+
+   </head>
+    
+   <style type="text/css">
+         
+      #B{
+         left:100px;
+         top:50px;
+         height:50px;
+         background-color:blue;
+         color:black;
+         position:absolute;
+         height:100px;
+         width:100px;
+         text-align:center;
+         font-size:20px; 
+         border-width:1px;
+         border:solid black;
+      }
+    
+   </style>
+        
+   <body onLoad="inizia()">
+    
+      <div> id='B'</div>
+    
+   </body>
+    
+</html>

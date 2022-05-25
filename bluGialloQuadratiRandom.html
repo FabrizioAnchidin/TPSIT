@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="it-IT">
+
+    <head>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="bluGialloQuadrantiRandom" content="4 quantranti che toccandosi diventano rossi">
+        <title>bluGialloQuadrantiRandom</title>
+
+        <style>
+            #A{
+                border: 1px solid black;
+                height: 100px;
+                width: 100px;
+                position: absolute;     
+            }
+
+            #B{
+                border: 1px solid black;
+                height: 100px;
+                width: 100px;
+                position: absolute;
+            }
+        </style>
+
+    </head>
+
+    <body onload="spawn()">
+
+        <div id="A"></div>
+        <div id="B"></div>
+
+        <script>
+        
+            function spawn()
+            {
+
+                setInterval(function(){
+
+                    var a = document.getElementById("A");
+                    var b = document.getElementById("B");
+
+                    var wid = 100;
+                    var hei = 100;
+
+                    var x1 = Math.floor((Math.random() * 500) + 1) ;
+                    var x2 = Math.floor((Math.random() * 500) + 1) ;
+                    var y1 = Math.floor((Math.random() * 500) + 1) ;
+                    var y2 = Math.floor((Math.random() * 500) + 1) ;
+
+                    a.style.top  =  x1  + "px";
+                    a.style.left =  y1  + "px";
+                    b.style.top  =  x2  + "px";
+                    b.style.left =  y2  + "px";
+                
+                    if(x1 < x2 + wid && x1 + wid > x2 &&y1 < y2 + hei && hei + y1 > y2)
+                    {
+                        a.style.backgroundColor="red";
+                        b.style.backgroundColor="red";
+                    }
+                    else
+                    {
+                        a.style.backgroundColor="blue";
+                        b.style.backgroundColor="yellow";
+                    }  
+                },500)
+            } 
+
+        </script>
+
+    </body>
+</html>

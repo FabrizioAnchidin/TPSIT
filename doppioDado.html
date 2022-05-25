@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="it-IT">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="2 dadi" content="doppio dado">
+        <title>lancio dado</title>
+
+        <style>
+            .rosso
+            {
+                color: rgb(224, 24, 24);
+                font-size: x-large;
+                color: rgb(0, 0, 0); 
+            }
+
+            .button17 
+            {
+                display: inline-block;
+                font-family: arial,sans-serif;
+                font-size: 11px;
+                color: rgb(205,216,228);
+                text-shadow: 0 -1px rgb(46,53,58);
+                text-decoration: none;
+                user-select: none;
+                line-height: 2em;
+                padding: 1px 1.2em;
+                outline: none;
+                border: 1px solid rgba(33,43,52,1);
+                border-radius: 3px;
+                background: rgb(81,92,102) linear-gradient(rgb(81,92,102), rgb(69,78,87));
+            }
+        </style>
+
+    </head>
+
+    <body>
+
+        <button class="button17" onclick="lanciodado(),lanciodado2()">Lancia i dadi</button>
+   
+        <p>Primo dado:</p>
+        <p id="out1" class="rosso"></p>
+
+        <p>Secondo dado:</p>
+        <p id="out2" class="rosso"></p>
+        <img id="win" src="bianco.png">
+
+    </body>
+
+    <script>
+
+        function lanciodado()
+        {
+            let casuale=0;
+            let dado=0;
+            let lancio=0;
+            casuale=Math.random();
+            dado=casuale*5;
+            lancio=Math.round(dado)+1;
+            document.getElementById("out1").innerHTML=lancio;
+
+            let casuale2=0;
+            let dado2=0;
+            let lancio2=0;
+            casuale2=Math.random();
+            dado2=casuale2*5;
+            lancio2=Math.round(dado2)+1;
+            document.getElementById("out2").innerHTML=lancio2;
+
+            if(lancio==lancio2)
+            {
+                document.getElementById("win").src="win.png"; 
+            }
+        }
+        
+    </script>
+
+</html>

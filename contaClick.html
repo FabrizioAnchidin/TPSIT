@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="it-IT">
+
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="contaClick" content="conto dei click">
+        <title>conto dei click </title>
+  
+        <link rel="stylesheet" href="./bottone.css">
+
+    </head>
+
+    <body>
+
+        <p id="miocountdown"></p>
+        <div id="miodiv">
+            <button id="miobutton,foot" class="button-os" onclick="contaclick()">Premi il bottone
+                <p id="mioout1"></p>
+            </button>
+        </div>
+
+        <script>
+
+            let contatore=0;
+
+            function contaclick(){
+                contatore++;
+                document.getElementById("mioout1").innerHTML=contatore.toString();
+                cambiasfondoaldiv();
+            }
+
+            function cambiasfondoaldiv() 
+            {
+                document.getElementById("miodiv").style.backgroundColor="red";
+            }
+        </script>
+        
+    </body>
+</html>

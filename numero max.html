@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it-IT">
+
+    <body>
+        <h1>Numero Maggiore </h1>
+
+        <form id="frm1" >
+            Primo numero: <input type="number" name="num1" value=""><br>
+            Secondo Numero: <input type="number" name="num2" value=""><br>
+            Terzo Numero: <input type="number" name="num3" value=""><br><br>
+        </form>
+
+        <button onclick="myFunction()">Trova il numero maggiore</button>
+
+        <p>Il primo numero è:</p>
+        <p id="num1"></p>
+        <p>Il secondo numero è:</p>
+        <p id="num2"></p>
+        <p>Il terzo numero è:</p>
+        <p id="num3"></p>
+
+        Il numero maggiore è :
+        <p id="demo"></p>
+
+        <script>
+            function myFunction() {
+
+                var x = document.getElementById("frm1");
+
+                var num1=x.elements[0].value;  
+                document.getElementById("num1").innerHTML =num1;
+
+                var num2=x.elements[1].value;
+                document.getElementById("num2").innerHTML =num2;
+
+                var num3=x.elements[2].value;
+                document.getElementById("num3").innerHTML =num3;
+  
+                document.getElementById("demo").innerHTML =Calcolo(num1,num2,num3);
+            }
+
+            function Calcolo(n1,n2,n3){
+                if (n1>n2 && n1>n3)
+                {
+                    return n1;
+                }
+                else 
+                {
+                    if (n2>n3)
+                    {
+                        return n2;
+                    }
+                    else
+                    {
+                        return n3;
+                    }
+                }
+            }
+
+        </script>
+
+    </body>
+</html>

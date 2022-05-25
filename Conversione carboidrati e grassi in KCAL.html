@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="it-IT">
+
+    <body>
+        <h1>grammi in calorie </h1>
+        <form id="frm1" >
+            METTERE grassi: <input type="text" name="Hbase" value="0"><br>
+            VALORE CALORIE:<input type="text" name="Harrivo" value="0"><br>
+            VALORE CArboidrato:<input type="text" name="Hsomma" value="0"><br>
+        </form>
+
+        <style>
+
+            .ul {
+                padding: 0;
+                list-style-type: none;
+            }
+
+            ul li {
+                box-sizing: border-box;
+                width: 15em;
+                height: 3em;
+                font-size: 10px;
+                border-radius: 0.5em;
+                margin: 0.5em;
+                box-shadow: 0 0 1em rgba(0,0,0,0.2);
+                color: white;
+                font-family: sans-serif;
+                text-transform: capitalize;
+                line-height: 3em;
+                transition: 0.3s;
+                cursor: pointer;
+            }
+
+            ul li:nth-child(odd) {
+                background: linear-gradient(to right,rgb(255, 153, 0), rgb(216, 18, 150));
+                text-align: left;
+                padding-left: 5%;
+                transform: perspective(500px) rotateY(30deg);
+            }
+
+            ul li:nth-child(even) {
+                background: linear-gradient(to left, orange, tomato);
+                text-align: right;
+                padding-right: 10%;
+                transform: perspective(400px) rotateY(-45deg);
+            }   
+
+            ul li:nth-child(odd):hover {
+                transform: perspective(200px) rotateY(45deg);
+                padding-left: 5%;
+            }
+
+            ul li:nth-child(even):hover {
+                transform: perspective(300px) rotateY(-45deg);
+                padding-right: 5%;
+            }
+
+            #miodiv{
+                background-color: rgb(31, 8, 240);
+                height: 400px;  
+            }
+
+
+        </style>
+
+        <div id="miodiv">
+        <p>CALORIE E GRASSI:</p>
+        <ul>
+            <li><button class="button" onclick="myFunction()" class="ul"> converti in kcal</button></li> 
+        </ul>
+
+        <ul>
+            <li><button class="button" onclick="ckal()" class="ul"> converti calorie</button></li> 
+        </ul>
+
+
+        <p>grassi:</p>
+        <p id="base"></p>
+        <p>calorie:</p>
+        <p id="arrivo"></p>
+        <p>carboidrati:</p>
+        <p id="somma"></p>
+
+        grassi in ckal
+        <p id="demo"></p>
+        carboidrati in calorie
+        <p id="demi"></p>
+
+        <script>
+
+            function myFunction() {
+
+                var x = document.getElementById("frm1");
+
+                var base=x.elements[0].value;  
+                document.getElementById("base").innerHTML =base;
+
+                var arrivo=x.elements[1].value;
+                document.getElementById("arrivo").innerHTML =arrivo;
+
+                document.getElementById("demo").innerHTML =Dislivello(base,arrivo);
+            }
+
+            function ckal(){
+
+    
+                var x = document.getElementById("frm1");
+
+                var somma=x.elements[2].value;
+                document.getElementById("somma").innerHTML =somma;
+
+                var arrivo=x.elements[1].value;
+                document.getElementById("arrivo").innerHTML =arrivo;
+
+                document.getElementById("demi").innerHTML =altezza(somma,arrivo);
+            }
+
+            function Dislivello(numero1,numero2){
+                return numero1*numero2;
+            }
+
+            function altezza(numero2,numero3){
+                return numero2*numero3;
+            }   
+
+        </script>
+
+    </body>
+</html>

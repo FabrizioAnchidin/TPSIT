@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it-IT">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="countdown" content="uso del contdown">
+        <title>conto i click che avvengono in 10 secondi</title>
+
+        <style>
+            .p
+            {
+                font-size: 1000%;
+                color: rgb(57, 20, 220);
+                text-align: center;
+            }
+
+            .div
+            {
+                height: 900px;
+                width: 900px;
+                border: 1px solid black;
+                text-align: center;
+                margin: 100px;
+                background-color: rgb(13, 152, 173);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="div">
+            <p id="miocountdown" class="p"></p>
+        </div>
+
+        <script>
+            const mioIntervallo=setInterval(startCountDown,1000)
+            let contatore=0;
+            let countdown=3;
+
+            function startCountDown()
+            {
+                document.getElementById("miocountdown").innerHTML=countdown.toString();
+                countdown--;
+
+                if(countdown==-1)
+                {
+                    clearInterval(mioIntervallo)
+                    document.getElementById("miocountdown").innerHTML="fine";
+                }
+            }
+        </script>
+    </body>
+
+</html>

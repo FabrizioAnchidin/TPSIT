@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it-IT">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="dado" content="dado">  
+        <title>Lancio Di un dado</title>
+    </head>
+
+    <body>
+   
+        <button class="button" onclick="lanciodado()"> lancia il dado</button>
+
+        <p>Numero casuale:</p>
+        <p class="rosso" id="out1"></p>
+
+        <p>numero casuale *10:</p>
+        <p class="rosso" id="out2"></p>
+
+        <p>Prendo la parte intera</p>
+        <p class="rosso" id="out3"></p>
+
+        <script>
+            function lanciodado() 
+            {
+                let casuale=0;
+                let dado=0;
+                let parteintera=0;
+                casuale=Math.random();
+                dado=casuale*6;
+                parteintera=Math.round(dado)+1;
+
+                document.getElementById("out1").innerHTML=casuale;
+                document.getElementById("out2").innerHTML=dado;
+                document.getElementById("out3").innerHTML=parteintera;
+            }
+        </script>
+
+    </body>
+
+</html>

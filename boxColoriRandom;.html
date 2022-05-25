@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it-IT">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <style>
+            #A{
+                left:100px;
+                top:50px;
+                background-color:white;
+                position:absolute;
+                height:100px;
+                width:100px;
+                border-width:1px;
+                border:solid black;
+            }
+        </style>
+
+    </head>
+
+    <body onload="inizia()">
+
+        <div id="A"></div>
+    
+    </body>
+
+    <script>
+
+        function inizia()
+        {
+            setInterval(function () {
+                var a=document.getElementById('A');
+                var r = Math.floor(Math.random() * 255);
+                var g = Math.floor(Math.random() * 255);
+                var b = Math.floor(Math.random() * 255);
+                var col = "rgb(" + r + "," + g + "," + b + ")";
+                a.style.backgroundColor=col;
+            }, 500);
+        }
+
+    </script>
+</html>
