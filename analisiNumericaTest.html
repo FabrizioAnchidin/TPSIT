@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="it-IT">
+
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="Numerica Test" content="Numerica Test">
+        <title>Analisi Numerica</title>
+    </head>
+
+    <body onload="start()">
+    
+
+        <script>
+    
+        function start()
+        {
+
+            document.write("<h1>Analisi Numerica test</h1>")
+
+            document.write("<h3>1) Quale numero minore di 1000 ha più fattori ?</h3>")
+            document.write("Il numero con più fattori <1000 è "+task1())
+        
+
+            document.write("<h3>2) Quanti fattori totali hanno i numeri compresi tra 1 e 1000 ?(somma di tutti i fattori esclusi i fattori dei numeri primi)</h3>")
+            document.write("Fattori totali = "+task2())
+
+            document.write("<h3>3) Qual è il numero che si trova moltiplicando il numero della domanda 1 e i numero che ha + fattori possibili tra i numeri 1000 e 2000?</h3>")
+            document.write("Il numero con più fattori tra 1000 e 2000 è "+task3()+"<br><br>"+task1()+"*"+task3()+" = "+task1()*task3())
+
+            document.write("<h3>4) Trova il primo numero primo successivo al numero della soluzione del problema 1</h3>")
+            document.write("Il primo numero primo dopo "+task1()+" è "+task4())
+
+            document.write("<h3>5) Trova il primo numero primo successivo al numero della soluzione del problema 2</h3>")
+            document.write("Il primo numero primo dopo "+task2()+" è "+task5())
+
+            document.write("<h3>6) Moltiplicare il numero del punto 4 con quello del punto 5 e trovare i fattori del risultato.</h3>")
+            document.write("N4*N5 = "+task4()+"*"+task5()+" = "+task4()*task5()+"<br>")
+            document.write(""+task6())
+
+
+            //TASK 1
+
+            function task1()
+            {
+                let fattore=1;
+                let contfat=0;
+                let numfatmax;
+                let fatmax=0;
+
+                for(let n=1;n<1000;n++)
+                {
+                    for(fattore=1;fattore<=n/2;fattore++)
+                    {
+                        if(n%fattore==0)
+                        {
+                            contfat++;
+                            if(contfat>fatmax)
+                            {
+                                fatmax=contfat+1;
+                                numfatmax=n;
+                            }
+                        }
+                    }
+                    contfat=0;
+                }
+                return numfatmax;     
+            }
+
+            //TASK2
+
+            function task2()
+            {
+
+                let fattore2=1;
+                let contfat2=1;
+                let sommafat=0;
+
+                for(let n2=1;n2<1000;n2++)
+                {
+                    for(fattore2=1;fattore2<=n2/2;fattore2++)
+                    {
+                        if(n2%fattore2==0)
+                        {
+                            contfat2++;
+                        }
+                    }
+                    if(contfat2>2)
+                    {
+                        sommafat=sommafat+contfat2;
+                    } 
+                    contfat2=0; 
+                }     
+                return sommafat;
+            }
+ 
+            //TASK3
+
+            function task3()
+            {
+
+                let fattore3;
+                let contfat3=0;
+                let numfatmax3;
+                let fatmax3=0;
+
+                for(let n3=1000;n3<2000;n3++)
+                {
+                    for(fattore3=1;fattore3<=n3/2;fattore3++)
+                    {
+                        if(n3%fattore3==0)
+                        {
+                            contfat3++;
+                            if(contfat3>fatmax3)
+                            {
+                                fatmax3=contfat3+1;
+                                numfatmax3=n3;
+                            }
+                        }
+                    }
+                    contfat3=0;
+                }
+                return numfatmax3;
+            }
+ 
+            //TASK4
+
+            function task4()
+            {
+
+                let fattore4=1;
+                let contfat4=1;
+                let n4=task1();
+
+                do
+                {
+                    contfat4=1;
+                    n4++;
+                    for(fattore4=1;fattore4<=n4/2;fattore4++)
+                    {
+                        if(n4%fattore4==0)
+                        {
+                            contfat4++;
+                        }
+                    }   
+                }
+                while(contfat4>2);
+
+                return n4;
+            }
+       
+            //TASK5
+
+            function task5()
+            {
+
+                let fattore5=1;
+                let contfat5=1;
+                let n5=task2();
+
+                do
+                {
+                    contfat5=1;
+                    n5++;
+                    for(fattore5=1;fattore5<=n5/2;fattore5++)
+                    {
+                        if(n5%fattore5==0)
+                        {
+                            contfat5++;
+                        }
+                    }   
+                }
+
+                while(contfat5>2);
+                return n5;
+            }
+
+            //TASK6
+
+            function task6()
+            {
+
+                let fattore6=1;
+                let fattoriOut6="";
+                let contafat6=1;
+
+                let n6=task4()*task5();
+
+                for(fattore6=1;fattore6<=n6/2;fattore6++)
+                {
+                    if(n6%fattore6==0)
+                    {
+                        fattoriOut6=fattoriOut6+fattore6+" ";
+                        contafat6++;
+                    }
+                }
+            
+                return fattoriOut6+" "+n6+" #"+contafat6+" fattori.";
+            }   
+        }      
+    </script>
+</body>
+</html>
