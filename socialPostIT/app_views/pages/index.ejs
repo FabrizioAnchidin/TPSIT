@@ -1,0 +1,52 @@
+<%- include("../partials/header.ejs") %>
+<!-- minore% serve per eseguire comandi javascript (eseguibili con script) direttamente su html-->
+<!-- includera l'header-->
+  
+<style>
+  
+  body {
+    background-color: #FAF36C;
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    
+  }
+
+  .container {
+    background-color:#FAB54B;
+    border-radius: 20px;
+    text-align: center;
+    width:40vh;
+  }
+
+  input {
+    font-size: 16px;
+    margin: 10px;
+    width:30vh;
+    
+  }
+
+  textarea{
+    font-size: 16px;
+    margin: 10px;
+    width:30vh; 
+  }
+</style>
+
+<div class='container' style='padding:20px' >
+  <h2>Crea il tuo Post-IT</h2>
+  <form action="/scrivi" method="post">
+    <input type="text" name="name" placeholder="Nome" autocomplete="off" maxlength="25">
+      <textarea type="text" name="message" placeholder="Messaggio (max 100)" autocomplete="off" maxlength="100"></textarea>
+      <div>
+      <button type="submit" class="btn btn-dark">Invia</button>
+      </div>
+  </form>
+</div>
+
+<!-- da qui includerà il footer -->
+<%- include("../partials/footer.ejs") %>

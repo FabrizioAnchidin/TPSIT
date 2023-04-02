@@ -1,0 +1,67 @@
+<%-include("../partials/header.ejs")%>
+<!-- includera l'header-->
+  
+  <style>
+    @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900");
+    
+    body {
+      font-family: "Poppins", sans-serif;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.7;
+      color: #000000;
+      width: 100%;
+      height: 100%;
+      background-color: #FAF36C;
+      background-position: bottom center;
+      background-repeat: no-repeat;
+      background-size: 200%;
+      overflow-x: hidden;
+    }
+        
+    h4{
+      font-size: 30px;
+      font-weight: 300;
+      text-align: center;
+    }
+    .tbl-content{
+      height:85vh;
+      overflow-x:auto;
+      margin-top: 0px;
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 20px;
+    }
+        
+    section{
+      margin: 20px;
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+
+  </style>
+  
+  <script>  //questo script impedisce al utente di copiare il testo del messaggio
+   window.onload = function() {
+      document.onselectstart = function() { return false; }  
+    }
+  </script>
+  
+  <section>
+    <h4 class="mb-2 pb-2">Social</h4>  <!--mb definisce il bottom inferiore e pd il padding inferiore -->
+    <div class="tbl-content">
+      <!--renderizza le carte sul social leggendo dati e sudivindendoli in item(nome,messaggio)-->
+      <!--sara un ciclo for che inserira le informazioni al interno della carta e le creerà-->
+      <% data.forEach(function(item) {%>
+      <div class="card" style="width: 18rem; background-color:#FAB54B;">
+        <div class="card-body">
+          <h5 class="card-title"><%= item.name %></h5>
+            <p class="card-text"><%= item.message %> </p>
+            <p class="card-text"><%= item.ora %> </p>
+        </div>
+      </div><br>
+      <% }); %>
+    </div>
+  </section>
+
+<!-- da qui includerà il footer -->
+<%- include("../partials/footer.ejs") %>
